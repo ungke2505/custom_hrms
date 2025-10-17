@@ -1,0 +1,23 @@
+{
+  "name": "Absensi Gembira Houseware",
+  "short_name": "Absensi",
+  "description": "Aplikasi absensi online untuk Gembira Houseware",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#e11d48",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icons/splash.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/splash.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bottom-nav {
+  transition: transform 0.3s ease;
+}
+
+body.camera-active .bottom-nav {
+  transform: translateY(100%);
+}

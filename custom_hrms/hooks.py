@@ -5,6 +5,13 @@ app_description = "HRMS Custom by ITech Gembira"
 app_email = "itechgembira@gmail.com"
 app_license = "MIT"
 
+
+
+override_whitelisted_methods = {
+    "custom_hrms.api.employee_checkin.employee_checkin": "custom_hrms.api.employee_checkin.employee_checkin"
+}
+
+doc_events = {}
 # Includes in <head>
 # ------------------
 

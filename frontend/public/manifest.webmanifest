@@ -1,0 +1,21 @@
+{
+  "name": "Absensi Gembira Houseware",
+  "short_name": "Absensi Gembira",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#b91d47",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/src/assets/img/pos.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/src/assets/img/pos.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
