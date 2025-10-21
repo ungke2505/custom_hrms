@@ -24,7 +24,7 @@
 // export default App;
 
 import { useEffect, useState } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import AppRoutes from "./routes/AppRoutes";
 
 function App() {
@@ -39,9 +39,9 @@ function App() {
   }, []);
 
   return (
-    <Router basename="/custom_hrms">
+    <BrowserRouter basename="/custom_hrms">
       <AppRoutes loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
-    </Router>
+    </BrowserRouter>
   );
 }
 

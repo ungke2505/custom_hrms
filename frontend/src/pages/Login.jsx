@@ -1,7 +1,8 @@
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import posImage from "@/assets/img/pos.png"; 
+import posImage from "@/assets/img/pos.png";
+import PWAInstallPrompt from "@/components/PWAInstallPrompt"; 
 
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState("");
@@ -80,6 +81,7 @@ const Login = ({ onLogin }) => {
           </button>
         </form>
       </div>
+      <PWAInstallPrompt />
     </div>
   );
 };
