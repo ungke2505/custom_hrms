@@ -35,7 +35,7 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 
 export default defineConfig({
-  base: '/custom_hrms/',   // ✅ sangat penting untuk PWA & refresh URL
+  base: '/custom_hrms/',
   plugins: [react()],
   resolve: {
     alias: {
@@ -45,10 +45,10 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     port: 5173,
-    allowedHosts: ['erpnext.gembirahouseware.com'],
+    allowedHosts: ['mysite.com'],
     proxy: {
       '/api': {
-        target: 'https://erpnext.gembirahouseware.com', // ✅ arahkan ke server ERPNext production
+        target: 'https://mysite.com',
         changeOrigin: true,
         secure: true,
       },
