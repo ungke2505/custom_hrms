@@ -2,7 +2,7 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "naming_series:",
- "creation": "2025-10-20 15:10:39.287441",
+ "creation": "2025-11-08 17:50:22.269774",
  "default_view": "List",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -26,7 +26,7 @@
  "fields": [
   {
    "fieldname": "date",
-   "fieldtype": "Date",
+   "fieldtype": "Datetime",
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Date"
@@ -36,18 +36,16 @@
    "fieldtype": "Column Break"
   },
   {
-   "allow_on_submit": 1,
    "fieldname": "workflow_state",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Draft\nDitolak\nDisetujui",
-   "read_only": 1
+   "options": "Draft\nDitolak\nDisetujui"
   },
   {
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Series",
-   "options": "LEP-.YY.MM.DD.-"
+   "options": "EEP-.YY.MM.DD.-"
   },
   {
    "fieldname": "section_break_vkds",
@@ -113,29 +111,18 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Late Entry Permission",
+   "options": "Early Exit Permit",
    "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Late Entry Permission",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-12-14 09:47:53.068526",
+ "modified": "2025-11-08 17:50:22.269774",
  "modified_by": "Administrator",
  "module": "Custom Hrms",
- "name": "Late Entry Permission",
+ "name": "Early Exit Permit",
  "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
@@ -174,19 +161,6 @@
    "report": 1,
    "role": "Employee Self Service",
    "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Kepala HRD",
-   "share": 1,
-   "submit": 1,
    "write": 1
   }
  ],

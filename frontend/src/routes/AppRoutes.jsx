@@ -7,6 +7,10 @@ import BottomNav from "../components/BottomNav";
 import LeaveRequest from "../pages/LeaveRequest";
 import Login from "../pages/Login";
 import MyAttendance from "../pages/MyAttendance";
+import LateEntryPermission from "../pages/LateEntryPermission";
+import LeaveMenu from "../pages/LeaveMenu";
+import EarlyLeavePermission from "../pages/EarlyLeavePermission";
+import SickLeavePermission from "../pages/SickLeavePermission";
 
 const AppRoutes = ({ loggedIn, setLoggedIn }) => {
   const location = useLocation();
@@ -37,6 +41,22 @@ const AppRoutes = ({ loggedIn, setLoggedIn }) => {
             path="/my-attendance"
             element={loggedIn ? <MyAttendance /> : <Navigate to="/login" />}
             />
+          <Route
+            path="/late-entry-permission"
+            element={loggedIn ? <LateEntryPermission /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/leave-menu"
+            element={loggedIn ? <LeaveMenu /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/early-leave-permission"
+            element={loggedIn ? <EarlyLeavePermission /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/sick-leave-permission"
+            element={loggedIn ? <SickLeavePermission /> : <Navigate to="/login" />}
+          />
         </Routes>
       </div>
 
