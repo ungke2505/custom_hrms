@@ -10,6 +10,11 @@ const LeaveMenu = () => {
       icon: "🌴",
       path: "/leave-request",
     },
+    { label: "Izin Terlambat",
+      description: "Gunakan saat kamu terlambat masuk kerja",
+      icon: "⏰",
+      path: "/late-entry-permission",
+    },
     {
       label: "Izin Pulang Cepat",
       description: "Gunakan saat kamu perlu pulang sebelum jam kerja berakhir",

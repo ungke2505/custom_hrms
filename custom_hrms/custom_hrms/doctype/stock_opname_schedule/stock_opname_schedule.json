@@ -1,0 +1,229 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:SO-SCH - {YYYY} - {#####}",
+ "creation": "2026-02-18 00:00:10.650501",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sc001",
+  "warehouse",
+  "location",
+  "column_break_eielp",
+  "opname_date",
+  "start_time",
+  "section_break_b4ea1",
+  "auto_close_hours",
+  "column_break_apq3e",
+  "status",
+  "section_break_qichz",
+  "participant",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Location",
+   "options": "Shift Location",
+   "reqd": 1
+  },
+  {
+   "fieldname": "opname_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Opname Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start_time",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "Start Time",
+   "reqd": 1
+  },
+  {
+   "default": "48",
+   "fieldname": "auto_close_hours",
+   "fieldtype": "Int",
+   "label": "Auto Close (Hours)",
+   "read_only": 1
+  },
+  {
+   "default": "Ongoing",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nScheduled\nOngoing\nClosed\nCancelled",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_qichz",
+   "fieldtype": "Section Break",
+   "label": "User Section"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "participant",
+   "fieldtype": "Table",
+   "label": "Participant",
+   "options": "Stock Opname Participant",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_eielp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Biarkan ini tetap default",
+   "fieldname": "section_break_b4ea1",
+   "fieldtype": "Section Break",
+   "label": "Status Section"
+  },
+  {
+   "fieldname": "column_break_apq3e",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Stock Opname Schedule",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "sc001",
+   "fieldtype": "Section Break",
+   "label": "Store & Warehouse Section"
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-03-31 10:12:11.981002",
+ "modified_by": "Administrator",
+ "module": "Custom Hrms",
+ "name": "Stock Opname Schedule",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Auditor",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "permlevel": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "permlevel": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "permlevel": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,193 +1,8 @@
-// // import { useEffect, useState } from "react";
-
-// // const EmployeeList = () => {
-// //   const [user, setUser] = useState(null);
-// //   const [month, setMonth] = useState(() => {
-// //     const now = new Date();
-// //     return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
-// //   });
-// //   const [totalFine, setTotalFine] = useState(0);
-// //   const [loading, setLoading] = useState(true);
-// //   const [error, setError] = useState(null);
-
-// //   // Ambil user login
-// //   useEffect(() => {
-// //     fetch("/api/method/frappe.auth.get_logged_user", { credentials: "include" })
-// //       .then((res) => res.json())
-// //       .then((data) => {
-// //         if (data.message) {
-// //           setUser(data.message);
-// //         }
-// //       })
-// //       .catch((err) => {
-// //         console.warn("Failed to get logged user:", err);
-// //         setError("Gagal mengambil data user.");
-// //       });
-// //   }, []);
-
-// //   // Ambil total denda dari API custom
-// //   useEffect(() => {
-// //     if (!user) return;
-// //     setLoading(true);
-// //     setError(null);
-
-// //     const [year, monthNum] = month.split("-");
-// //     fetch(
-// //       `/api/method/custom_hrms.api.employee.get_total_late_fines?employee=${user}&year=${year}&month=${monthNum}`,
-// //       { credentials: "include" }
-// //     )
-// //       .then((res) => res.json())
-// //       .then((data) => {
-// //         if (data.message !== undefined) {
-// //           setTotalFine(data.message);
-// //         } else {
-// //           setError("Tidak ada data denda ditemukan.");
-// //         }
-// //       })
-// //       .catch((err) => {
-// //         console.error("Error fetching fines:", err);
-// //         setError("Gagal memuat data denda.");
-// //       })
-// //       .finally(() => setLoading(false));
-// //   }, [user, month]);
-
-// //   return (
-// //     <div className="p-4 space-y-6">
-// //       <div className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white p-5 rounded-2xl shadow">
-// //         <h2 className="text-lg font-semibold">
-// //           Total Denda Keterlambatan 💸
-// //         </h2>
-// //         <p className="text-sm opacity-90">
-// //           Periode:{" "}
-// //           <input
-// //             type="month"
-// //             value={month}
-// //             onChange={(e) => setMonth(e.target.value)}
-// //             className="bg-transparent border-b border-white ml-2 focus:outline-none"
-// //           />
-// //         </p>
-// //       </div>
-
-// //       <div className="bg-white p-5 rounded-2xl shadow border border-gray-100">
-// //         {loading ? (
-// //           <p>Memuat data denda...</p>
-// //         ) : error ? (
-// //           <p className="text-red-500">{error}</p>
-// //         ) : (
-// //           <div>
-// //             <p className="text-gray-700 text-lg mb-2">
-// //               Total Denda Bulan Ini:
-// //             </p>
-// //             <p className="text-3xl font-bold text-indigo-600">
-// //               Rp {parseInt(totalFine).toLocaleString("id-ID")}
-// //             </p>
-// //           </div>
-// //         )}
-// //       </div>
-// //     </div>
-// //   );
-// // };
-
-// // export default EmployeeList;
-
-// import { useEffect, useState } from "react";
-
-// const EmployeeList = () => {
-//   const [user, setUser] = useState(null);
-//   const [month, setMonth] = useState(() => {
-//     const now = new Date();
-//     return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
-//   });
-//   const [totalFine, setTotalFine] = useState(0);
-//   const [loading, setLoading] = useState(true);
-//   const [error, setError] = useState(null);
-
-//   // 🔹 Ambil user login dari session
-//   useEffect(() => {
-//     fetch("/api/method/frappe.auth.get_logged_user", { credentials: "include" })
-//       .then((res) => res.json())
-//       .then((data) => {
-//         if (data.message) {
-//           setUser(data.message);
-//         }
-//       })
-//       .catch((err) => {
-//         console.warn("Failed to get logged user:", err);
-//         setError("Gagal mengambil data user.");
-//       });
-//   }, []);
-
-//   // 🔹 Ambil total denda dari API custom
-//   useEffect(() => {
-//     if (!user) return;
-//     setLoading(true);
-//     setError(null);
-
-//     const [year, monthNum] = month.split("-");
-//     fetch(
-//       `/api/method/custom_hrms.api.employee.get_total_late_fines?employee=${user}&year=${year}&month=${monthNum}`,
-//       { credentials: "include" }
-//     )
-//       .then((res) => res.json())
-//       .then((data) => {
-//         // ✅ Perbaikan utama di sini
-//         if (data.message && data.message.total_late_fines !== undefined) {
-//           setTotalFine(data.message.total_late_fines);
-//         } else {
-//           setError("Tidak ada data denda ditemukan.");
-//         }
-//       })
-//       .catch((err) => {
-//         console.error("Error fetching fines:", err);
-//         setError("Gagal memuat data denda.");
-//       })
-//       .finally(() => setLoading(false));
-//   }, [user, month]);
-
-//   return (
-//     <div className="p-4 space-y-6">
-//       {/* Header Section */}
-//       <div className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white p-5 rounded-2xl shadow">
-//         <h2 className="text-lg font-semibold">Total Denda Keterlambatan 💸</h2>
-//         <p className="text-sm opacity-90">
-//           Periode:{" "}
-//           <input
-//             type="month"
-//             value={month}
-//             onChange={(e) => setMonth(e.target.value)}
-//             className="bg-transparent border-b border-white ml-2 focus:outline-none"
-//           />
-//         </p>
-//       </div>
-
-//       {/* Content Section */}
-//       <div className="bg-white p-5 rounded-2xl shadow border border-gray-100">
-//         {loading ? (
-//           <p>Memuat data denda...</p>
-//         ) : error ? (
-//           <p className="text-red-500">{error}</p>
-//         ) : (
-//           <div>
-//             <p className="text-gray-700 text-lg mb-2">
-//               Total Denda Bulan Ini:
-//             </p>
-//             <p className="text-3xl font-bold text-indigo-600">
-//               Rp {Number(totalFine || 0).toLocaleString("id-ID")}
-//             </p>
-//           </div>
-//         )}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default EmployeeList;
-
-
 import { useEffect, useState } from "react";
 
 const EmployeeList = () => {
   const [user, setUser] = useState(null);
+  const [data, setData] = useState(null);
   const [fromDate, setFromDate] = useState(() => {
     const now = new Date();
     return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-01`;
@@ -198,48 +13,76 @@ const EmployeeList = () => {
       new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate()
     ).padStart(2, "0")}`;
   });
-  const [totalFine, setTotalFine] = useState(0);
+
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // ===============================
   // Ambil user login
+  // ===============================
   useEffect(() => {
     fetch("/api/method/frappe.auth.get_logged_user", { credentials: "include" })
       .then((res) => res.json())
-      .then((data) => {
-        if (data.message) setUser(data.message);
+      .then((res) => {
+        if (res.message) setUser(res.message);
       })
       .catch(() => setError("Gagal mengambil data user."));
   }, []);
 
-  // Ambil total denda berdasarkan range tanggal
+  // ===============================
+  // Ambil data dari backend
+  // ===============================
   useEffect(() => {
     if (!user) return;
+
     setLoading(true);
     setError(null);
 
     fetch(
-      `/api/method/custom_hrms.api.employee.get_total_late_fines?from_date=${fromDate}&to_date=${toDate}`,
-    { credentials: "include" }
+      `/api/method/custom_hrms.api.employee.get_employee_fine_and_deposit?from_date=${fromDate}&to_date=${toDate}`,
+      { credentials: "include" }
     )
       .then((res) => res.json())
-      .then((data) => {
-        if (data.message && data.message.total_late_fines !== undefined) {
-          setTotalFine(data.message.total_late_fines);
+      .then((res) => {
+        if (res.message) {
+          setData(res.message);
         } else {
-          setError("Tidak ada data denda ditemukan.");
+          setError("Tidak ada data ditemukan.");
         }
       })
-      .catch(() => setError("Gagal memuat data denda."))
+      .catch(() => setError("Gagal memuat data."))
       .finally(() => setLoading(false));
   }, [user, fromDate, toDate]);
 
+  // ===============================
+  // FORMAT MINUTES (ANTI NaN)
+  // ===============================
+  const formatMinutes = (value) => {
+    const minutes = Number(value || 0);
+    const h = Math.floor(minutes / 60);
+    const m = minutes % 60;
+    return `${h} Jam ${m} Menit`;
+  };
+
+  // ===============================
+  // FORMAT RUPIAH
+  // ===============================
+  const formatRupiah = (value) => {
+    return new Intl.NumberFormat("id-ID", {
+      style: "currency",
+      currency: "IDR",
+      minimumFractionDigits: 0,
+    }).format(Number(value || 0));
+  };
+
   return (
     <div className="p-4 space-y-6">
+
+      {/* HEADER */}
       <div className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white p-5 rounded-2xl shadow">
-        <h2 className="text-lg font-semibold">Total Denda Keterlambatan 💸</h2>
+        <h2 className="text-lg font-semibold">Ringkasan Denda & Deposit</h2>
         <p className="text-sm opacity-90">
-          Periode:{" "}
+          Periode:
           <input
             type="date"
             value={fromDate}
@@ -258,15 +101,50 @@ const EmployeeList = () => {
 
       <div className="bg-white p-5 rounded-2xl shadow border border-gray-100">
         {loading ? (
-          <p>Memuat data denda...</p>
+          <p>Memuat data...</p>
         ) : error ? (
           <p className="text-red-500">{error}</p>
-        ) : (
-          <div>
-            <p className="text-gray-700 text-lg mb-2">Total Denda Periode Ini:</p>
-            <p className="text-3xl font-bold text-indigo-600">
-              Rp {Math.round(Number(totalFine || 0)).toLocaleString("id-ID")}
-            </p>
+        ) : data && (
+          <div className="space-y-4">
+
+            {/* TERLAMBAT */}
+            <div>
+              <p className="text-gray-600">Total Terlambat</p>
+              <p className="font-bold">
+                {formatMinutes(data.total_late_minutes)}
+              </p>
+            </div>
+
+            {/* TOTAL DENDA */}
+            <div className="border-t pt-3">
+              <p className="text-gray-800 font-semibold">Total Denda</p>
+              <p className="text-xl font-bold text-red-600">
+                {formatRupiah(data.total_fine)}
+              </p>
+            </div>
+
+            {/* DEPOSIT */}
+            <div className="border-t pt-3">
+              <p className="text-gray-600">Total Deposit Didapat</p>
+              <p className="font-bold">
+                {formatMinutes(data.total_deposit_earned_minutes)}
+              </p>
+            </div>
+
+            <div>
+              <p className="text-gray-600">Total Deposit Digunakan</p>
+              <p className="font-bold">
+                {formatMinutes(data.total_deposit_used_minutes)}
+              </p>
+            </div>
+
+            <div>
+              <p className="text-gray-800 font-semibold">Sisa Deposit</p>
+              <p className="text-xl font-bold text-indigo-600">
+                {formatMinutes(data.remaining_deposit_minutes)}
+              </p>
+            </div>
+
           </div>
         )}
       </div>

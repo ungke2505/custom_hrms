@@ -214,8 +214,8 @@ const Dashboard = () => {
   const [showAnniversaries, setShowAnniversaries] = useState(false);
 
   const links = [
-    { label: "Absensi", to: "/attendance", icon: "check-in" },
-    { label: "Izin Terlambat", to: "/late-entry-permission", icon: "leave-request" },
+    { label: "Absensi Normal", to: "/attendance", icon: "check-in" },
+    { label: "Absensi S.O", to: "/stock-opname", icon: "check-in" },
     { label: "Cuti dan Lainnya", to: "/leave-menu", icon: "leave-request" },
     { label: "Rekap Absensi", to: "/employees", icon: "attendance" },
   ];

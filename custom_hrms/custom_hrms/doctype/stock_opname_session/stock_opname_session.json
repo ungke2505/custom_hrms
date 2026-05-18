@@ -1,0 +1,223 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:SO-SESSION-{YYYY}-{#####}",
+ "creation": "2026-02-23 21:27:03.525194",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_info_section",
+  "employee",
+  "employee_name",
+  "column_break_oroec",
+  "sc001",
+  "schedule",
+  "column_break_svnnk",
+  "warehouse",
+  "log_details_section",
+  "in_time",
+  "column_break_xwhjk",
+  "out_time",
+  "session_details_section",
+  "session_status",
+  "is_closed",
+  "is_posted_deposit",
+  "column_break_njb5h",
+  "total_minutes",
+  "total_hours",
+  "section_break_zrc2f",
+  "source_in_log",
+  "source_out_log",
+  "column_break_ognr8"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "schedule",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Schedule",
+   "options": "Stock Opname Schedule",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "fieldname": "in_time",
+   "fieldtype": "Datetime",
+   "label": "In Time"
+  },
+  {
+   "fieldname": "out_time",
+   "fieldtype": "Datetime",
+   "label": "Out Time"
+  },
+  {
+   "fieldname": "total_minutes",
+   "fieldtype": "Int",
+   "label": "Total Minutes",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_hours",
+   "fieldtype": "Float",
+   "label": "Total Hours",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "Open",
+   "fieldname": "session_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Session Status",
+   "options": "Open\nCompleted\nInvalid",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "source_in_log",
+   "fieldtype": "Link",
+   "label": "Source IN Log",
+   "options": "Stock Opname Log",
+   "read_only": 1
+  },
+  {
+   "fieldname": "source_out_log",
+   "fieldtype": "Link",
+   "label": "Source Out Log",
+   "options": "Stock Opname Log",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_closed",
+   "fieldtype": "Check",
+   "label": "Is Closed"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_posted_deposit",
+   "fieldtype": "Check",
+   "label": "Is Posted Deposit",
+   "read_only": 1
+  },
+  {
+   "fieldname": "basic_info_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Info"
+  },
+  {
+   "fieldname": "sc001",
+   "fieldtype": "Section Break",
+   "label": "Schedule & Location"
+  },
+  {
+   "fieldname": "column_break_xwhjk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "session_details_section",
+   "fieldtype": "Section Break",
+   "label": "Session Details"
+  },
+  {
+   "fieldname": "column_break_njb5h",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_zrc2f",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ognr8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_svnnk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "log_details_section",
+   "fieldtype": "Section Break",
+   "label": "Log Details"
+  },
+  {
+   "fieldname": "column_break_oroec",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-03-31 10:04:40.857900",
+ "modified_by": "Administrator",
+ "module": "Custom Hrms",
+ "name": "Stock Opname Session",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

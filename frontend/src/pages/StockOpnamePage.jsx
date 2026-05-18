@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Attendance from "@/components/Attendance";
+import StockOpname from "@/components/StockOpname";
 
-const AttendancePage = () => {
+const StockOpnamePage = () => {
   const [location, setLocation] = useState(null);
   const [error, setError] = useState("");
 
@@ -24,7 +24,7 @@ const AttendancePage = () => {
 
   return (
     <div className="p-4">
-      <h2 className="text-xl font-bold mb-4">Attendance</h2>
+      <h2 className="text-xl font-bold mb-4">Stock Opname</h2>
 
       {location ? (
         <div className="mb-4">
@@ -32,6 +32,7 @@ const AttendancePage = () => {
           <p className="text-sm font-medium">
             Lat: {location.latitude}, Lng: {location.longitude}
           </p>
+
           <iframe
             className="mt-2 rounded border"
             width="100%"
@@ -42,12 +43,14 @@ const AttendancePage = () => {
           ></iframe>
         </div>
       ) : (
-        <p className="text-red-500 mb-4">{error || "Mengambil lokasi..."}</p>
+        <p className="text-red-500 mb-4">
+          {error || "Mengambil lokasi..."}
+        </p>
       )}
 
-      <Attendance location={location} />
+      <StockOpname location={location} />
     </div>
   );
 };
 
-export default AttendancePage;
+export default StockOpnamePage;

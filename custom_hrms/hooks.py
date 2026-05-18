@@ -11,7 +11,12 @@ override_whitelisted_methods = {
     "custom_hrms.api.employee_checkin.employee_checkin": "custom_hrms.api.employee_checkin.employee_checkin"
 }
 
-doc_events = {}
+doc_events = {
+    "Stock Opname Log": {
+        "before_insert": "custom_hrms.custom_hrms.doctype.stock_opname_log.stock_opname_log.before_insert",
+        "after_insert": "custom_hrms.custom_hrms.doctype.stock_opname_log.stock_opname_log.after_insert"
+    }
+}
 # Includes in <head>
 # ------------------
 

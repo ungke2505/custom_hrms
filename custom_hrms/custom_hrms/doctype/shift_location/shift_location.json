@@ -20,8 +20,10 @@
   {
    "fieldname": "shift",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Shift",
-   "options": "Shift Type"
+   "options": "Shift Type",
+   "reqd": 1
   },
   {
    "fieldname": "location_name",
@@ -67,7 +69,7 @@
    "link_fieldname": "shift_location"
   }
  ],
- "modified": "2025-10-20 16:16:06.466562",
+ "modified": "2026-01-20 13:33:38.378109",
  "modified_by": "Administrator",
  "module": "Custom Hrms",
  "name": "Shift Location",
@@ -95,6 +97,30 @@
    "read": 1,
    "report": 1,
    "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Kepala Toko",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Kepala Kasir",
    "share": 1,
    "write": 1
   }

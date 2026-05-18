@@ -24,7 +24,7 @@ def employee_checkin(log_type, latitude=None, longitude=None, photo=None):
 
         shift_assignment = frappe.db.get_value(
             "Shift Assignment",
-            {"employee": employee, "status": "Active"},
+            {"employee": employee, "status": "Active", "docstatus": 1},
             ["shift_location", "shift_type"],
             as_dict=True,
         )
@@ -109,7 +109,7 @@ def get_employee_shift(employee):
     """Ambil shift aktif dan lokasi shift karyawan."""
     shift_assignment = frappe.db.get_value(
         "Shift Assignment",
-        {"employee": employee, "status": "Active"},
+        {"employee": employee, "status": "Active", "docstatus": 1},
         ["shift_type", "shift_location"],
         as_dict=True,
     )
